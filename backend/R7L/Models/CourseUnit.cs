@@ -8,7 +8,7 @@ public partial class CourseUnit
 
     public int CourseId { get; set; }
 
-    public BitArray IsDeleted { get; set; } = null!;
+    public bool IsDeleted { get; set; }
 
     public int OrderInCourse { get; set; }
 
@@ -23,6 +23,8 @@ public partial class CourseUnit
     public virtual CourseUnitType CourseUnitType { get; set; } = null!;
 
     public virtual ICollection<Test> Tests { get; set; } = new List<Test>();
+
+    public virtual ICollection<UserCourseUnitComment> UserCourseUnitComments { get; set; } = new List<UserCourseUnitComment>();
 
     public virtual ICollection<UserCourseUnit> UserCourseUnits { get; set; } = new List<UserCourseUnit>();
 }
